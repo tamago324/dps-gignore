@@ -8,7 +8,8 @@ Generating gitignore using [gitignore.io](https://www.toptal.com/developers/giti
 
 ## Installation
 
-```
+```vim
+Plug ''vim-denops/denops.vim''
 Plug 'tamago324/dps-gignore'
 ```
 
@@ -19,7 +20,7 @@ Plug 'tamago324/dps-gignore'
 
 Insert into current buffer.
 
-```
+```vim
 :GignoreSetlines vim lua
 ```
 
@@ -29,14 +30,14 @@ Insert into current buffer.
 
 Create a gitignore for the git repository in the current directory (`getcwd()`).
 
-```
+```vim
 :GignoreGenerate vim lua
 ```
 
 
 ## Configuration
 
-```
+```vim
 " Cache directory for language list
 let g:dps_gignore_cache_dir = expand('~/.cache/dps-gignore')
 ```
