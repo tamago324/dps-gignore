@@ -9,7 +9,7 @@ Generating gitignore using [gitignore.io](https://www.toptal.com/developers/giti
 ## Installation
 
 ```vim
-Plug ''vim-denops/denops.vim''
+Plug 'vim-denops/denops.vim'
 Plug 'tamago324/dps-gignore'
 ```
 
