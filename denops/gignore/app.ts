@@ -102,7 +102,7 @@ main(async ({ vim }) => {
 
       if (existsSync(gitignore)) {
         // もし、 .gitignore があったら、上書きするか聞く
-        const res = await vim.call('confirm', 'Th .gitignore already exists. Do you want to overwrite it?', "&No\n&Yes");
+        const res = await vim.call('confirm', 'The .gitignore already exists. Do you want to overwrite it?', "&No\n&Yes");
         if (res == 1) {
           vim.cmd('echomsg "[dps-gignore] Canceled"');
           return;
