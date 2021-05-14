@@ -16,12 +16,12 @@ Plug 'tamago324/dps-gignore'
 ## Usage
 
 
-### GignoreSetlines
+### GignoreSetLines
 
 Insert into current buffer.
 
 ```vim
-:GignoreSetlines vim lua
+:GignoreSetLines vim lua
 ```
 
 

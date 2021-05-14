@@ -75,7 +75,7 @@ main(async ({ vim }) => {
       return languages;
     },
 
-    async setlines(...languages: Array<unknown>): Promise<void> {
+    async setLines(...languages: Array<unknown>): Promise<void> {
 
       const buflines = await vim.call('line', '$');
       const first_text = await vim.call('getline', 1);
@@ -119,7 +119,7 @@ main(async ({ vim }) => {
   });
 
   await vim.execute(`
-    command! -nargs=+ -complete=customlist,denops#gignore#complete GignoreSetlines call denops#request('${vim.name}', 'setlines', [<f-args>])
+    command! -nargs=+ -complete=customlist,denops#gignore#complete GignoreSetLines call denops#request('${vim.name}', 'setLines', [<f-args>])
     command! -nargs=+ -complete=customlist,denops#gignore#complete GignoreGenerate call denops#request('${vim.name}', 'genGitignore', [<f-args>])
   `);
 });
