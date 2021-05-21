@@ -85,7 +85,8 @@ main(async ({ vim }) => {
         text = text.replace(/^\n/, '');
       }
 
-      vim.call("setline", 1, text.split(/\n/));
+      const lnum = await vim.eval("line('.')") as number;
+      vim.call("setline", lnum, text.split(/\n/));
     },
 
     async genGitignore(...languages: Array<unknown>): Promise<void> {
@@ -119,7 +120,7 @@ main(async ({ vim }) => {
   });
 
   await vim.execute(`
-    command! -nargs=+ -complete=customlist,denops#gignore#complete GignoreSetLines call denops#request('${vim.name}', 'setLines', [<f-args>])
-    command! -nargs=+ -complete=customlist,denops#gignore#complete GignoreGenerate call denops#request('${vim.name}', 'genGitignore', [<f-args>])
+    command! -nargs=+ -complete=customlist,denops#gignore#complete GignoreSetLines call denops#notify('${vim.name}', 'setLines', [<f-args>])
+    command! -nargs=+ -complete=customlist,denops#gignore#complete GignoreGenerate call denops#notify('${vim.name}', 'genGitignore', [<f-args>])
   `);
 });
